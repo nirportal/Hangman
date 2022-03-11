@@ -1,6 +1,6 @@
-lives = 6
-print("Welcome to the game Hangman")
-print("""
+MAX_TRIES = 6
+HANGMAN_ASCII_ART = """
+Welcome to the game Hangman \n
   _    _                                         
  | |  | |                                        
  | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __  
@@ -9,13 +9,12 @@ print("""
  |_|  |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                       __/ |                      
                      |___/
-""")
-print(lives)
-print("""
+"""
+picture_1 = """
 picture 1:
     x-------x
-""")
-print("""
+"""
+picture_2 = """
 picture 2:
     x-------x
     |
@@ -23,8 +22,8 @@ picture 2:
     |
     |
     |
-""")
-print("""
+"""
+picture_3 = """
 picture 3:
     x-------x
     |       |
@@ -32,8 +31,8 @@ picture 3:
     |
     |
     |
-""")
-print("""
+"""
+picture_4 = """
 picture 4:
     x-------x
     |       |
@@ -41,8 +40,8 @@ picture 4:
     |       |
     |
     |
-""")
-print("""
+"""
+picture_5 = """
 picture 5:
     x-------x
     |       |
@@ -50,8 +49,8 @@ picture 5:
     |      /|\ 
     |
     |
-""")
-print("""
+"""
+picture_6 = """
 picture 6:
     x-------x
     |       |
@@ -59,8 +58,8 @@ picture 6:
     |      /|\ 
     |      /
     |
-""")
-print("""
+"""
+picture_7 = """
 picture 7:
     x-------x
     |       |
@@ -68,4 +67,7 @@ picture 7:
     |      /|\ 
     |      / \ 
     |
-""")
+"""
+print(HANGMAN_ASCII_ART, MAX_TRIES)
+guess_letter = input("Guess a letter: ")
+print(guess_letter)
