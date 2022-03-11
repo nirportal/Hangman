@@ -68,6 +68,8 @@ picture 7:
     |      / \ 
     |
 """
-print(HANGMAN_ASCII_ART, MAX_TRIES)
-guess_letter = input("Guess a letter: ")
-print(guess_letter)
+#print(HANGMAN_ASCII_ART, MAX_TRIES)
+#guess_letter = input("Guess a letter: ")
+#print(guess_letter.lower())
+word = input("enter a word: ")
+print('_ '*len(word))
