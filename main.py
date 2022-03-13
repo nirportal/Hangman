@@ -69,7 +69,14 @@ picture 7:
     |
 """
 #print(HANGMAN_ASCII_ART, MAX_TRIES)
-#guess_letter = input("Guess a letter: ")
-#print(guess_letter.lower())
-word = input("enter a word: ")
-print('_ '*len(word))
+#word = input("enter a word: ")
+#print('_ '*len(word))
+guess_letter = input("Guess a letter: ")
+if len(guess_letter) > 1 and not guess_letter.isalpha():
+    print("E3")
+elif len(guess_letter) > 1:
+    print("E1")
+elif guess_letter.isalpha():
+    print(guess_letter.lower())
+elif not guess_letter.isalpha():
+    print("E2")
