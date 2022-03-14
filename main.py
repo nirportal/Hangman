@@ -71,12 +71,21 @@ picture 7:
 #print(HANGMAN_ASCII_ART, MAX_TRIES)
 #word = input("enter a word: ")
 #print('_ '*len(word))
+
 guess_letter = input("Guess a letter: ")
-if len(guess_letter) > 1 and not guess_letter.isalpha():
-    print("E3")
-elif len(guess_letter) > 1:
-    print("E1")
-elif guess_letter.isalpha():
-    print(guess_letter.lower())
-elif not guess_letter.isalpha():
-    print("E2")
+
+
+def is_valid_input(letter_guessed):
+    """
+    this function checks if the letter guessed is valid
+    for my game: the letter must be one letter
+    in english only.
+    :param letter_guessed: the letter guested from the user
+    :type: string
+    :return: returns if the letter is valid (True or False).
+    :rtype: bool
+    """
+    if len(letter_guessed) > 1 or not(letter_guessed.isalpha()):
+        return False
+    elif len(letter_guessed) == 1 and letter_guessed.isalpha():
+        return True
