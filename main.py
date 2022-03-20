@@ -129,8 +129,42 @@ def organize_list_as_string(old_letters_guessed):
     return new_string
 
 
-old_letters = ['a', 'p', 'c', 'f']
-print(try_update_letter_guessed('A', old_letters))
-print(try_update_letter_guessed('s', old_letters))
-print(try_update_letter_guessed('$', old_letters))
-print(try_update_letter_guessed('d', old_letters))
+def show_hidden_word(secret_word, old_letters_guessed):
+    """
+    the function shows how much progress the user did so far
+    :param secret_word: the word the user needs to guess
+    :param old_letters_guessed: a list of user input of letters
+    :type: str
+    :type: list
+    :return: the string format for showing how much the user progressed
+    :rtype: str
+    """
+    b_string = ''
+    for item in secret_word:
+        if item in old_letters_guessed:
+            b_string += item + " "
+        else:
+            b_string += "_ "
+    return b_string[:-1]
+
+
+def check_win(secret_word, old_letters_guessed):
+    """
+    checks if the user have won or not
+    :param secret_word: the word the user needs to guess
+    :param old_letters_guessed: the user letters guessed
+    :type: str
+    :type: list
+    :return: True if the player won
+    False if the player lost
+    :rtype: bool
+    """
+    return " ".join(secret_word) == show_hidden_word(secret_word, old_letters_guessed)
+
+
+secret_word = "friends"
+old_letters_guessed = ['m', 'p', 'j', 'i', 's', 'k']
+print(check_win(secret_word, old_letters_guessed))
+secret_word = "yes"
+old_letters_guessed = ['d', 'g', 'e', 'i', 's', 'k', 'y']
+print(check_win(secret_word, old_letters_guessed))
