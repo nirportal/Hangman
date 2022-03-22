@@ -168,3 +168,9 @@ print(check_win(secret_word, old_letters_guessed))
 secret_word = "yes"
 old_letters_guessed = ['d', 'g', 'e', 'i', 's', 'k', 'y']
 print(check_win(secret_word, old_letters_guessed))
+
+#data = ("self", "py", 1.543)
+#format_string = "Hello %s.%s learner, you have only %.1f units left before" \
+#                " you master the course!"
+#print(format_string % data)
+
