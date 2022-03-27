@@ -169,8 +169,59 @@ secret_word = "yes"
 old_letters_guessed = ['d', 'g', 'e', 'i', 's', 'k', 'y']
 print(check_win(secret_word, old_letters_guessed))
 
-#data = ("self", "py", 1.543)
-#format_string = "Hello %s.%s learner, you have only %.1f units left before" \
-#                " you master the course!"
-#print(format_string % data)
+'''8.32
+from datetime import date
 
+
+def age(birthdate):
+    today = date.today()
+    return today.year - int(birthdate[6:]) \
+           - ((today.month, today.day) < (int(birthdate[3:5]), int(birthdate[:2])))
+
+
+info_dict = {"first_name": "maria", "last_name": "Carey", "birth_date": "27.03.1970",
+             "hobbies": ['Sing', 'Compose', 'Act']}
+user_input = input("enter a number between 1 - 7: ")
+if user_input == '1':
+    print(info_dict["last_name"])
+if user_input == '2':
+    print(info_dict["birth_date"][3:5])
+if user_input == '3':
+    print(len(info_dict["hobbies"]))
+if user_input == '4':
+    print(info_dict["hobbies"][-1])
+if user_input == '5':
+    info_dict["hobbies"].append('Cooking')
+if user_input == '6':
+    info_dict["birth_date"] = ('27', '03', '1970')
+    print(info_dict["birth_date"])
+if user_input == '7':
+    info_dict["age"] = age(info_dict["birth_date"])
+    print(info_dict)
+
+8.33    
+def count_chars(my_str):
+    new_dict = {}
+    for char in my_str:
+        if char != ' ':
+            new_dict[char] = my_str.count(char)
+    return new_dict
+
+
+magic_str = "abra cadabra"
+print(count_chars(magic_str))
+
+
+8.34
+def inverse_dict(my_dict):
+    new_dict = {}
+    for item in my_dict.keys():
+        #print(new_dict)
+        new_dict.setdefault(my_dict[item], [])
+        new_dict[my_dict[item]].append(item)
+    return new_dict
+
+
+course_dict = {'I': 3, 'love': 3, 'self.py!': 2}
+print(inverse_dict(course_dict))
+'''
