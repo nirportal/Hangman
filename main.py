@@ -10,64 +10,7 @@ Welcome to the game Hangman \n
                       __/ |                      
                      |___/
 """
-picture_1 = """
-picture 1:
-    x-------x
-"""
-picture_2 = """
-picture 2:
-    x-------x
-    |
-    |
-    |
-    |
-    |
-"""
-picture_3 = """
-picture 3:
-    x-------x
-    |       |
-    |       0
-    |
-    |
-    |
-"""
-picture_4 = """
-picture 4:
-    x-------x
-    |       |
-    |       0
-    |       |
-    |
-    |
-"""
-picture_5 = """
-picture 5:
-    x-------x
-    |       |
-    |       0
-    |      /|\ 
-    |
-    |
-"""
-picture_6 = """
-picture 6:
-    x-------x
-    |       |
-    |       0
-    |      /|\ 
-    |      /
-    |
-"""
-picture_7 = """
-picture 7:
-    x-------x
-    |       |
-    |       0
-    |      /|\ 
-    |      / \ 
-    |
-"""
+
 #print(HANGMAN_ASCII_ART, MAX_TRIES)
 #word = input("enter a word: ")
 #print('_ '*len(word))
@@ -162,12 +105,73 @@ def check_win(secret_word, old_letters_guessed):
     return " ".join(secret_word) == show_hidden_word(secret_word, old_letters_guessed)
 
 
-secret_word = "friends"
-old_letters_guessed = ['m', 'p', 'j', 'i', 's', 'k']
-print(check_win(secret_word, old_letters_guessed))
-secret_word = "yes"
-old_letters_guessed = ['d', 'g', 'e', 'i', 's', 'k', 'y']
-print(check_win(secret_word, old_letters_guessed))
+HANGMAN_PHOTOS = {"picture_1": """
+    x-------x
+    """, "picture_2": """
+    x-------x
+    |
+    |
+    |
+    |
+    |
+    """, "picture_3": """
+    x-------x
+    |       |
+    |       0
+    |
+    |
+    |
+    """, "picture_4": """
+    x-------x
+    |       |
+    |       0
+    |       |
+    |
+    |
+    """, "picture_5": """
+    x-------x
+    |       |
+    |       0
+    |      /|\ 
+    |
+    |
+    """, "picture_6": """
+    x-------x
+    |       |
+    |       0
+    |      /|\ 
+    |      /
+    |
+    """, "picture_7": """
+    x-------x
+    |       |
+    |       0
+    |      /|\ 
+    |      / \ 
+    |
+    """}
+
+
+def print_hangman(num_of_tries):
+    global HANGMAN_PHOTOS
+    if num_of_tries == 1:
+        print(HANGMAN_PHOTOS["picture_1"])
+    if num_of_tries == 2:
+        print(HANGMAN_PHOTOS["picture_2"])
+    if num_of_tries == 3:
+        print(HANGMAN_PHOTOS["picture_3"])
+    if num_of_tries == 4:
+        print(HANGMAN_PHOTOS["picture_4"])
+    if num_of_tries == 5:
+        print(HANGMAN_PHOTOS["picture_5"])
+    if num_of_tries == 6:
+        print(HANGMAN_PHOTOS["picture_6"])
+    if num_of_tries == 7:
+        print(HANGMAN_PHOTOS["picture_7"])
+
+
+num_of_tries = 6
+print_hangman(num_of_tries)
 
 '''8.32
 from datetime import date
