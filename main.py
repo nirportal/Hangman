@@ -240,7 +240,6 @@ def main():
     start_screen()
     file_path = input("enter a file path: ")
     while not file_exists(file_path):
-        # C:\Users\nirpo\OneDrive\Documents\words.txt
         file_path = input("file not exists! enter a new file path: ")
     index = input("enter an index: ")
     while not check_user_input(index):
